@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.usventuresltd.answers.controllers.HelloContorllerMockMVCTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2024-05-29T21:30:58" hostname="Swamys-Mac.local" time="0.509">
+  <properties/>
+  <testcase name="testHellpWithName()" classname="com.usventuresltd.answers.controllers.HelloContorllerMockMVCTest" time="0.502"/>
+  <testcase name="testHellpWithoutName()" classname="com.usventuresltd.answers.controllers.HelloContorllerMockMVCTest" time="0.003"/>
+  <testcase name="testMockMvc()" classname="com.usventuresltd.answers.controllers.HelloContorllerMockMVCTest" time="0.003"/>
+  <system-out><![CDATA[15:30:58.336 [Test worker] INFO org.springframework.test.context.support.AnnotationConfigContextLoaderUtils -- Could not detect default configuration classes for test class [com.usventuresltd.answers.controllers.HelloContorllerMockMVCTest]: HelloContorllerMockMVCTest does not declare any static, non-private, non-final, nested classes annotated with @Configuration.
+15:30:58.385 [Test worker] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper -- Found @SpringBootConfiguration com.usventuresltd.answers.AnswersApplication for test class com.usventuresltd.answers.controllers.HelloContorllerMockMVCTest
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+
+ :: Spring Boot ::                (v3.3.0)
+
+2024-05-29T15:30:58.517-06:00  INFO 86286 --- [Answers] [    Test worker] c.u.a.c.HelloContorllerMockMVCTest       : Starting HelloContorllerMockMVCTest using Java 17.0.10 with PID 86286 (started by swamysivasubramaniyan in /Users/swamysivasubramaniyan/home/repo/java/Answers)
+2024-05-29T15:30:58.517-06:00  INFO 86286 --- [Answers] [    Test worker] c.u.a.c.HelloContorllerMockMVCTest       : No active profile set, falling back to 1 default profile: "default"
+2024-05-29T15:30:58.524-06:00 DEBUG 86286 --- [Answers] [    Test worker] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@45f24169
+2024-05-29T15:30:58.730-06:00  INFO 86286 --- [Answers] [    Test worker] o.s.b.a.w.s.WelcomePageHandlerMapping    : Adding welcome page: class path resource [static/index.html]
+2024-05-29T15:30:58.752-06:00 DEBUG 86286 --- [Answers] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : 3 mappings in 'requestMappingHandlerMapping'
+2024-05-29T15:30:58.774-06:00 DEBUG 86286 --- [Answers] [    Test worker] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-05-29T15:30:58.783-06:00 DEBUG 86286 --- [Answers] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-05-29T15:30:58.793-06:00 DEBUG 86286 --- [Answers] [    Test worker] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-05-29T15:30:58.810-06:00 DEBUG 86286 --- [Answers] [    Test worker] o.s.b.w.s.ServletContextInitializerBeans : Mapping filters: characterEncodingFilter urls=[/*] order=-2147483648, formContentFilter urls=[/*] order=-9900, requestContextFilter urls=[/*] order=-105
+2024-05-29T15:30:58.810-06:00 DEBUG 86286 --- [Answers] [    Test worker] o.s.b.w.s.ServletContextInitializerBeans : Mapping servlets: 
+2024-05-29T15:30:58.814-06:00  INFO 86286 --- [Answers] [    Test worker] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2024-05-29T15:30:58.814-06:00  INFO 86286 --- [Answers] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2024-05-29T15:30:58.815-06:00  INFO 86286 --- [Answers] [    Test worker] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 0 ms
+2024-05-29T15:30:58.827-06:00  INFO 86286 --- [Answers] [    Test worker] c.u.a.c.HelloContorllerMockMVCTest       : Started HelloContorllerMockMVCTest in 0.417 seconds (process running for 0.798)
+2024-05-29T15:30:59.206-06:00 DEBUG 86286 --- [Answers] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.usventuresltd.answers.controllers.HelloContorller#sayHello(String, Model)
+2024-05-29T15:30:59.223-06:00 DEBUG 86286 --- [Answers] [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2024-05-29T15:30:59.327-06:00 DEBUG 86286 --- [Answers] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.usventuresltd.answers.controllers.HelloContorller#sayHello(String, Model)
+2024-05-29T15:30:59.328-06:00 DEBUG 86286 --- [Answers] [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+2024-05-29T15:30:59.334-06:00 DEBUG 86286 --- [Answers] [    Test worker] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.usventuresltd.answers.controllers.HelloContorller#sayHello(String, Model)
+2024-05-29T15:30:59.334-06:00 DEBUG 86286 --- [Answers] [    Test worker] o.s.w.s.v.ContentNegotiatingViewResolver : Selected '*/*' given [*/*]
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
