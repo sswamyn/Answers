@@ -40,7 +40,7 @@ class RestClientApplicationTests {
 		assertNotNull(context.getBean("astroService"));
 		// Since we know that RestTemplate is not a bean, we should get an exception
 		assertThrows(NoSuchBeanDefinitionException.class,
-				() -> context.getBean("restTemplate")) // Lambda with no arguments
+				() -> context.getBean("restTemplate")) ;// Lambda with no arguments
 		// The above is assert expects an Executable, which is a functional interface. We can use a lambda expression
 
 	}
