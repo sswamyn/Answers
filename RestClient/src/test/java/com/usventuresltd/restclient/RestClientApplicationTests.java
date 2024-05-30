@@ -1,6 +1,7 @@
 package com.usventuresltd.restclient;
 
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.NoSuchBeanDefinitionException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.context.ApplicationContext;
@@ -31,6 +32,17 @@ class RestClientApplicationTests {
 		// Let us make sure that there is no RestTemplate bean, only RestTemplateBuilder
 		assertFalse(context.containsBean("restTemplate"));
 		assertTrue(context.containsBean("restTemplateBuilder"));
+	}
+
+	@Test
+	void getBean() {
+		assertNotNull(context);
+		assertNotNull(context.getBean("astroService"));
+		// Since we know that RestTemplate is not a bean, we should get an exception
+		assertThrows(NoSuchBeanDefinitionException.class,
+				() -> context.getBean("restTemplate")) // Lambda with no arguments
+		// The above is assert expects an Executable, which is a functional interface. We can use a lambda expression
+
 	}
 
 }
