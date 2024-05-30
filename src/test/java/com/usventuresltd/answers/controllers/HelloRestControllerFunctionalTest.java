@@ -5,10 +5,13 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+
+import java.util.Objects;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT) // starts the server with a random port
 public class HelloRestControllerFunctionalTest {
@@ -17,14 +20,26 @@ public class HelloRestControllerFunctionalTest {
     private TestRestTemplate restTemplate;
 
     @Test
-    public void sayHello() {
+    public void sayHelloWithoutName() {
         assertNotNull(restTemplate);
-        Greeting result = restTemplate.getForObject("/rest", Greeting.class);
-        assertEquals("Hello, World", result.message());
+        Greeting response = restTemplate.getForObject("/rest", Greeting.class);
+        assertEquals("Hello, World", response.message());
 
-        // Reusing the variable 'result' to store the response from the server; Kind of risky!
-        result = restTemplate.getForObject("/rest?name=Sarika", Greeting.class);
-        assertThat(result.message()).isEqualTo("Hello, Sarika");
+    }
+
+    @Test
+    public void sayHelloWithName() {
+        assertNotNull(restTemplate);
+
+        ResponseEntity<Greeting> response = restTemplate.getForEntity("/rest?name=Sarika", Greeting.class);
+
+        assertAll(
+                () -> assertNotNull(response),
+                () -> assertTrue(response.getStatusCode().is2xxSuccessful()),
+                () -> assertEquals(MediaType.APPLICATION_JSON, response.getHeaders().getContentType()),
+                () -> assertEquals("Hello, Sarika", Objects.requireNonNull(response.getBody()).message())
+                //Objects.requireNonNull() was used since the response.getBody() could be null
+        );
 
     }
 }
