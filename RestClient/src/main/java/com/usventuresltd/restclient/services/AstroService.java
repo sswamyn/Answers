@@ -15,11 +15,15 @@ public class AstroService {
     private final RestTemplate restTemplate;
     private final WebClient webClient;
 
-    public AstroService(RestTemplateBuilder builder) {
+    public AstroService(RestTemplate template) {
+        this.restTemplate = template;
+        this.webClient = WebClient.create("http://api.open-notify.org");
+    }
+/*    public AstroService(RestTemplateBuilder builder) {
         this.restTemplate = builder.rootUri("http://api.open-notify.org").build();
         this.webClient = WebClient.create("http://api.open-notify.org");
     }
-
+*/
     public String getPeopleInSpace() {
         return this.restTemplate.getForObject("/astros.json", String.class);
     }
